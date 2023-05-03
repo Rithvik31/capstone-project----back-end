@@ -18,6 +18,4 @@ public class User {
      
     @Column(name = " Name ", nullable = false, length = 20)
     private String Name;
-     
-    // getters and setters are not shown   
 }
