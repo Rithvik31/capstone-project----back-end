@@ -11,6 +11,9 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDTO {
+    public UserDTO(String name2, String email2, String password2) {
+    }
+
     @NotBlank(message = "Name is mandatory")
     private String name;
 
