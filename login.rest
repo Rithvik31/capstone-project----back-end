@@ -1,7 +1,9 @@
-POST http://localhost:8080/register Content-Type: application/json
+POST http://localhost:8080/users/register
+Content-Type: application/json
 
 { "name":"qwerty", "email": "werty@gmail.com", "password": "jla;f;a" }
 
 ### POST http://localhost:8080/login Content-Type: application/json
 
-{ "email": "qwerty", "password": "jla;f;a" } ### DELETE http://localhost:8080/users/all
+{ "email": "qwerty", "password": "jla;f;a" } 
+### DELETE http://localhost:8080/users/all
