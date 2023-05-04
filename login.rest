@@ -3,7 +3,10 @@ Content-Type: application/json
 
 { "name":"qwerty", "email": "qwerty@gmail.com", "password": "jla;f;a" }
 
-### POST http://localhost:8080/login Content-Type: application/json
+### 
+POST http://localhost:8080/users/login
+Content-Type: application/json
 
 { "email": "qwerty@gmail.com", "password": "jla;f;a" } 
-### DELETE http://localhost:8080/users/all
+### 
+DELETE http://localhost:8080/users/all
