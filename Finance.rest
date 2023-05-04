@@ -11,7 +11,7 @@ POST http://localhost:8080/finance/user
 Content-Type: application/json
 
 {
-"userId": 6, "id": 8, "financeType": "INCOME", "tag": "salary", "invDt": "2023-12-23", "amt": 12300
+"userId": 2, "id": 8, "financeType": "INCOME", "tag": "salary", "invDt": "2023-12-23", "amt": 12300
 }
 
 ### All the Finances GET http://localhost:8080/finance/
