@@ -1,36 +1,19 @@
-### Create New Account 
-POST http://localhost:8080/finance/ HTTP/1.1 
-content-type: application/json
+### Add a finance info 
+POST http://localhost:8080/finance/user 
+Content-Type: application/json
 
 {
-
-"financetye" : "poi",
-"tag":"investment",
-"invDt" : "2015-01-01", "amt" : 159
-
+"userId": 1, "id": 8, "financeType": "EXPENSES", "tag": "investment", "invDt": "2023-12-23", "amt": 2300
 }
 
-### Create New Invoice with Customer 
-POST http://localhost:8080/finance/user HTTP/1.1 
-content-type: application/json
+### update a Finance tag 
+POST http://localhost:8080/finance/user 
+Content-Type: application/json
 
 {
-"client" : "Paytm", "invDt" : "2015-01-01", "amt" : 1233, "customerId" : 1
+"userId": 6, "id": 8, "financeType": "INCOME", "tag": "salary", "invDt": "2023-12-23", "amt": 12300
 }
 
-### Get All Invoices GET http://localhost:8080/finance/
+### All the Finances GET http://localhost:8080/finance/
 
-### Delete Invoice By Id DELETE http://localhost:8080/invoice/2
-
-### Invoice By Id GET http://localhost:8080/invoice/4
-
-### Create New Account
-
-PUT http://localhost:8080/invoice/ HTTP/1.1 
-content-type: application/json
-
-{
-"id" : 10, "client" : "ooo", "invDt" : "1990-01-01", "amt" : 70000
-}
-
-### List All Customer Invoices GET http://localhost:8080/invoice/customer/5
+### Specific Finance GET http://localhost:8080/finance/user/11
