@@ -8,10 +8,10 @@
 		<version>2.7.11</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.sac.project</groupId>
-	<artifactId>Personal-Finance-Tracker</artifactId>
+	<groupId>com.ani.project</groupId>
+	<artifactId>Capstone-project</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Personal-Finance-Tracker</name>
+	<name>Capstone-project</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>1.8</java.version>
