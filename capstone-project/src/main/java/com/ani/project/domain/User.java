@@ -1,26 +1,31 @@
 package com.ani.project.domain;
 
+import java.util.List;
+import java.util.Optional;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Objects;
-
-@Entity
-@Builder
 @Getter
 @Setter
 @NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Builder
 @Table(name = "users")
 public class User {
 
@@ -41,37 +46,9 @@ public class User {
 
     private boolean loggedIn;
 
-    public User(String name, String email, String password) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private List<Finance> finance;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User)) return false;
-        User user = (User) o;
-        return Objects.equals(email, user.email);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(email);
-    }
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", loggedIn=" + loggedIn +
-                '}';
-    }
-
-    public static Object builder() {
-        return null;
-    }
 }
