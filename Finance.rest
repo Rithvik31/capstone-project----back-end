@@ -18,9 +18,9 @@ POST http://localhost:8080/finance/user HTTP/1.1 content-type: application/json
 
 ### Get All Invoices GET http://localhost:8080/finance/
 
-### Delete Invoice By Id DELETE http://localhost:8080/invoice/1
+### Delete Invoice By Id DELETE http://localhost:8080/invoice/2
 
-### Invoice By Id GET http://localhost:8080/invoice/7
+### Invoice By Id GET http://localhost:8080/invoice/4
 
 ### Create New Account
 
@@ -30,4 +30,4 @@ PUT http://localhost:8080/invoice/ HTTP/1.1 content-type: application/json
 "id" : 10, "client" : "ooo", "invDt" : "1990-01-01", "amt" : 70000
 }
 
-### List All Customer Invoices GET http://localhost:8080/invoice/customer/2
+### List All Customer Invoices GET http://localhost:8080/invoice/customer/5
