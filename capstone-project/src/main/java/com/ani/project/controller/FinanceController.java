@@ -20,7 +20,6 @@ import com.ani.project.dto.FinanceUserDto;
 import com.ani.project.service.FinanceService;
 import com.ani.project.util.AppResponse;
 
-
 import lombok.AllArgsConstructor;
 
 @CrossOrigin
@@ -30,7 +29,7 @@ import lombok.AllArgsConstructor;
 public class FinanceController {
 
     private final FinanceService service;
-    
+
     @CrossOrigin
     @PostMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<AppResponse<Integer>> createNewFinance(@RequestBody FinanceDto dto) {
@@ -38,13 +37,12 @@ public class FinanceController {
         final Integer sts = service.createNewFinance(dto);
 
         final AppResponse<Integer> response = AppResponse.<Integer>builder()
-                                                    .sts("success")
-                                                    .msg("finance added Successfully")
-                                                    .bd(sts)
-                                                    .build();
+                .sts("success")
+                .msg("finance added Successfully")
+                .bd(sts)
+                .build();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-
 
     @CrossOrigin
     @PostMapping(value = "/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -53,23 +51,22 @@ public class FinanceController {
         final Integer sts = service.createNewFinance(dto);
 
         final AppResponse<Integer> response = AppResponse.<Integer>builder()
-                                                    .sts("success")
-                                                    .msg("Finance added Successfully")
-                                                    .bd(sts)
-                                                    .build();
+                .sts("success")
+                .msg("Finance added Successfully")
+                .bd(sts)
+                .build();
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
-
 
     @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<AppResponse<List<FinanceDto>>> allFinances() {
         List<FinanceDto> finances = service.all();
 
         AppResponse<List<FinanceDto>> response = AppResponse.<List<FinanceDto>>builder()
-                                                            .sts("success")
-                                                            .msg("finances")
-                                                            .bd(finances)
-                                                            .build();
+                .sts("success")
+                .msg("finances")
+                .bd(finances)
+                .build();
 
         return ResponseEntity.ok().body(response);
     }
@@ -80,24 +77,24 @@ public class FinanceController {
         final Integer sts = service.deleteFinance(id);
 
         final AppResponse<Integer> response = AppResponse.<Integer>builder()
-            .sts("success")
-            .msg("Finance Deleted Successfully")
-            .bd(sts)
-            .build();
+                .sts("success")
+                .msg("Finance Deleted Successfully")
+                .bd(sts)
+                .build();
 
         return ResponseEntity.status(200).body(response);
     }
 
-    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE )
+    @GetMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<AppResponse<FinanceDto>> getFinanceById(@PathVariable Long id) {
 
         final FinanceDto dto = service.fetchFinanceDetails(id);
 
         final AppResponse<FinanceDto> response = AppResponse.<FinanceDto>builder()
-                                                        .sts("success")
-                                                        .msg("FInancial Details")
-                                                        .bd(dto)
-                                                        .build();
+                .sts("success")
+                .msg("FInancial Details")
+                .bd(dto)
+                .build();
         return ResponseEntity.ok().body(response);
     }
 
@@ -106,10 +103,10 @@ public class FinanceController {
         List<FinanceDto> invoices = service.allUserFInances(id);
 
         AppResponse<List<FinanceDto>> response = AppResponse.<List<FinanceDto>>builder()
-                                                            .sts("success")
-                                                            .msg("Users FInacne")
-                                                            .bd(invoices)
-                                                            .build();
+                .sts("success")
+                .msg("Users FInacne")
+                .bd(invoices)
+                .build();
 
         return ResponseEntity.ok().body(response);
     }
@@ -121,10 +118,10 @@ public class FinanceController {
         final Integer sts = service.updateFinance(dto);
 
         final AppResponse<Integer> response = AppResponse.<Integer>builder()
-                                                    .sts("success")
-                                                    .msg("Finance Updated Successfully")
-                                                    .bd(sts)
-                                                    .build();
+                .sts("success")
+                .msg("Finance Updated Successfully")
+                .bd(sts)
+                .build();
 
         return ResponseEntity.ok().body(response);
     }
