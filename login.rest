@@ -1,12 +1,12 @@
 POST http://localhost:8080/users/register
 Content-Type: application/json
 
-{ "name":"qwerty", "email": "qwerty@gmail.com", "password": "jla;f;a" }
+{ "name":"ricky", "email": "ricky@gmail.com", "password": "ricky12345" }
 
 ### 
 POST http://localhost:8080/users/login
 Content-Type: application/json
 
-{ "email": "qwerty@gmail.com", "password": "jla;f;a" } 
+{ "email": "ricky@gmail.com", "password": "ricky12345" } 
 ### 
 DELETE http://localhost:8080/users/all
