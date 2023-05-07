@@ -16,6 +16,7 @@ import com.ani.project.exception.UserNotFoundException;
 import com.ani.project.repository.FinanceRepository;
 import com.ani.project.repository.UserRepository;
 import com.ani.project.util.FinanceMapper;
+import com.ani.project.util.FinanceType;
 
 import lombok.AllArgsConstructor;
 
@@ -80,10 +81,34 @@ public class FinanceServiceImpl implements FinanceService {
     }
 
     @Override
+    public Double getTotalIncome() {
+        return repository.getTotalAmountByType(FinanceType.INCOME);
+    }
+    @Override
+    public Double getTotalExpenses(){
+        return repository.getTotalAmountByType(FinanceType.EXPENSES);
+    }
+
+
+
+    @Override
+    public Double getTotalIncomeByTagAndUser(String tag, Long userId) {
+        return repository.getTotalAmountByTypeAndTagAndUser(FinanceType.INCOME, tag, userId);
+}
+
+    @Override
+    public List<Object[]> findTotalAmountByTagAndType() {
+        return repository.findTotalAmountByTagAndType();
+    }
+
+
+
+    @Override
     public List<FinanceDto> allUserFInances(Long id) throws UserNotFoundException {
         return repository.findById(id)
                         .stream()
                         .map(mapper::toDto)
                         .collect(Collectors.toList());
     }
+
 }

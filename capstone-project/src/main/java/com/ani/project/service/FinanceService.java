@@ -21,5 +21,16 @@ public interface FinanceService {
     Integer updateFinance(FinanceDto finance);
 
     List<FinanceDto> allUserFInances(Long id) throws UserNotFoundException;
+
+    Double getTotalIncome();
+    Double getTotalExpenses();
+
+
+
+    Double getTotalIncomeByTagAndUser(String tag, Long userID);
+    List<Object[]> findTotalAmountByTagAndType();
+
+    
+
     
 }

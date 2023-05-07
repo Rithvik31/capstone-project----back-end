@@ -10,3 +10,11 @@ Content-Type: application/json
 { "email": "ricky@gmail.com", "password": "ricky12345" } 
 ### 
 DELETE http://localhost:8080/users/all
+
+### Forgot Password 
+POST http://localhost:8080/user/login/forgotpass
+content-type: application/json
+
+{
+"email": "rithvikchinnu@gmail.com"
+}
