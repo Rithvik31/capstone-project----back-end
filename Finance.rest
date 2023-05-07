@@ -1,9 +1,9 @@
 ### Add a finance info 
-POST http://localhost:8080/finance/user 
+POST http://localhost:8080/finance/user
 Content-Type: application/json
 
 {
-"financeType": "EXPENSES", "tag": "investment", "invDt": "2023-12-23", "amt": 2300
+"id": 1,"financeType": "EXPENSES", "tag": "investment", "invDt": "2023-12-23", "amt": 2300
 }
 
 ### update a Finance tag 
