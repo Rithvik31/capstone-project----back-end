@@ -77,11 +77,10 @@ public class FinanceController {
 
         return ResponseEntity.ok().body(response);
     }
-
-
+    
     @CrossOrigin
-    @DeleteMapping(value = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AppResponse<Integer>> deleteInvoice(@PathVariable Long id) {
+    @DeleteMapping(value = "/delete/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<AppResponse<Integer>> deleteFinance(@PathVariable Long id) {
 
         final Integer sts = service.deleteFinance(id);
 
