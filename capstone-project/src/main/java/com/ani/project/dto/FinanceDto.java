@@ -3,6 +3,7 @@ package com.ani.project.dto;
 import java.time.LocalDate;
 
 import com.ani.project.util.FinanceType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

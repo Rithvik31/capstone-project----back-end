@@ -5,6 +5,18 @@ Content-Type: application/json
 {
 "id": 1,"financeType": "EXPENSES", "tag": "investment", "invDt": "2023-12-23", "amt": 2300
 }
+###
+POST http://localhost:8080/finance/user HTTP/1.1
+Content-Type: application/json
+
+{
+    "id" : 53,
+    "invDt": "2022-01-01",
+    "financeType": "INCOME",
+    "tag": "salary",
+    "amt": 5000.0,
+    "userId" : 1
+}
 
 ### update a Finance tag 
 POST http://localhost:8080/finance/user 
@@ -15,11 +27,11 @@ Content-Type: application/json
 }
 
 ### All the Finances 
-GET http://localhost:8080/finance/
+GET http://localhost:8080/finance/user-finances
 
 ### Specific Finance 
 GET http://localhost:8080/finance/user/11
-
+###
 GET http://localhost:8080/finance/user-finances
 
 ###
