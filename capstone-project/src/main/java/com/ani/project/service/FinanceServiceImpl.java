@@ -91,17 +91,6 @@ public class FinanceServiceImpl implements FinanceService {
 
 
 
-    @Override
-    public Double getTotalIncomeByTagAndUser(String tag, Long userId) {
-        return repository.getTotalAmountByTypeAndTagAndUser(FinanceType.INCOME, tag, userId);
-}
-
-    @Override
-    public List<Object[]> findTotalAmountByTagAndType() {
-        return repository.findTotalAmountByTagAndType();
-    }
-
-
 
     @Override
     public List<FinanceDto> allUserFInances(Long id) throws UserNotFoundException {

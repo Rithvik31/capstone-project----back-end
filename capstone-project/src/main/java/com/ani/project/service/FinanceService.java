@@ -25,11 +25,6 @@ public interface FinanceService {
     Double getTotalIncome();
     Double getTotalExpenses();
 
-
-
-    Double getTotalIncomeByTagAndUser(String tag, Long userID);
-    List<Object[]> findTotalAmountByTagAndType();
-
     
 
     

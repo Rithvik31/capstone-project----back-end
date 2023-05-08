@@ -133,12 +133,6 @@ public class FinanceController {
         return service.getTotalExpenses();
     }
 
-    @GetMapping("/tag")
-    public ResponseEntity<List<Object[]>> getIncomeByTag() {
-        List<Object[]> result = service.findTotalAmountByTagAndType();
-        return new ResponseEntity<>(result, HttpStatus.OK);
-    }
-
 
     @CrossOrigin
     @PutMapping(value = "/", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
