@@ -65,7 +65,7 @@ public class FinanceServiceImpl implements FinanceService {
     public Integer createNewFinance(FinanceUserDto dto) {
 
         User user = userRepository.findById(dto.getUserId())
-                                        .orElseThrow(() -> new UserNotFoundException("User Not Found"));
+                .orElseThrow(() -> new UserNotFoundException("User Not Found"));
 
         Finance finance = new Finance();
         finance.setAmount(dto.getAmt());
@@ -84,20 +84,18 @@ public class FinanceServiceImpl implements FinanceService {
     public Double getTotalIncome() {
         return repository.getTotalAmountByType(FinanceType.INCOME);
     }
+
     @Override
-    public Double getTotalExpenses(){
+    public Double getTotalExpenses() {
         return repository.getTotalAmountByType(FinanceType.EXPENSES);
     }
-
-
-
 
     @Override
     public List<FinanceDto> allUserFInances(Long id) throws UserNotFoundException {
         return repository.findById(id)
-                        .stream()
-                        .map(mapper::toDto)
-                        .collect(Collectors.toList());
+                .stream()
+                .map(mapper::toDto)
+                .collect(Collectors.toList());
     }
 
 }

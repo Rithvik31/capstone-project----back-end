@@ -16,4 +16,6 @@ public interface FinanceRepository extends JpaRepository<Finance, Long> {
     @Query("SELECT SUM(f.amount) FROM Finance f WHERE f.financeType = :type")
     Double getTotalAmountByType(@Param("type") FinanceType type);
 
+    
+
 }
